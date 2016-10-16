@@ -1,0 +1,20 @@
+MEAN
+
+https://www.youtube.com/watch?v=Jh0er2pRcq8
+
+https://github.com/alpeshdp/JavaScript.git
+alpesh.parekh@gmail.com
+DevAlpesh@GH1
+
+layout:
+------------
+
+serevr - server side code
+public - css/images/js for client
+
+.bowerrc: where to install client side dependencies
+
+bower init => to create bower.json
+
+use bower install <> --save to install client side dependencies like jQuery, angular, toaster etc.
+They will be installed in public/vendor directory as directed on .bowerrc

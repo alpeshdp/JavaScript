@@ -1,0 +1,21 @@
+{
+  "name": "Multivision",
+  "description": "Learning MEAN",
+  "main": "index.js",
+  "authors": [
+    "Alpesh"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "MEAN"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "AngularJS-Toaster": "toaster#^2.0.0",
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
