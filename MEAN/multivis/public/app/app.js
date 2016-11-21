@@ -8,12 +8,9 @@ app.config(function($routeProvider, $locationProvider) {
         requireBase: false
     });
     $routeProvider.when('/', {
-        templateUrl : '/partials/main',
+        templateUrl : '/partials/main/main',
         controller : 'MainController'
     })
 });
 
 
-app.controller('MainController', ['$scope', function($scope) {
-    $scope.testVar = 'Hello MEAN';
-}])

@@ -18,3 +18,38 @@ bower init => to create bower.json
 
 use bower install <> --save to install client side dependencies like jQuery, angular, toaster etc.
 They will be installed in public/vendor directory as directed on .bowerrc
+
+
+# How to add a data to request, so that view can render it?
+#* server.xml
+1. 
+Message.findOne().exec(function(err, doc) {
+    console.log(doc);
+    if(err) {
+        messageResult = 'No Message Found from Mongo';
+    } else {
+        messageResult = doc.message;
+    }
+    console.log("MessageResult is:" + messageResult)
+});
+
+2.
+app.get('*', function(req, res) {
+    res.render('index', {
+        MonGoMessage : messageResult
+    });
+});
+
+#* index.jade
+h2=MonGoMessage
+
+What's New? (Tag1)
+1. Views (partials) organized in different folders on server side
+2. Added content to main page
+3. Explained recursive loop betwen Express and Angular
+   Check server.xml 
+   -- get for partials will not match hence * will render index.jade
+   -- index.jade will request for partial .... infinite loop 
+4. Login UI added.   
+
+   

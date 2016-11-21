@@ -51,35 +51,17 @@ var messageSchema = mongoose.Schema({
     message : String
 });
 var Message = mongoose.model('Message', messageSchema);
-var messageResult;
-//Message.find(function(err, messages) {
-//    if(err) messageResult = 'No Message Found from Mongo';
-//    else
-//        messageResult = messages[0].message;
-//})
-Message.findOne().exec(function(err, doc) {
-    console.log(doc);
-    if(err) {
-        messageResult = 'No Message Found from Mongo';
-    } else {
-        messageResult = doc.message;
-    }
-    console.log("MessageResult is:" + messageResult)
-});
 
-app.get('/partials/:partialPath', function(req, res){
-    console.log("Requested partial name:" + req.params.partialPath);
-    res.render('partials/' + req.params.partialPath);
+app.get('/partials/*', function(req, res){
+    console.log("Requested partial name:" + req.params[0]);
+    res.render('partials/' + req.params[0]);
 })
-
 
 //using *, server index page for any request and let client do routing.
 //or
 //have all matching routes inclioent and server
 app.get('*', function(req, res) {
-    res.render('index', {
-        MonGoMessage : messageResult
-    });
+    res.render('index');
 });
 var port = 3030;
 app.listen(port);
