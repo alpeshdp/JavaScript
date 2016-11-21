@@ -54,7 +54,7 @@ var Message = mongoose.model('Message', messageSchema);
 
 app.get('/partials/*', function(req, res){
     console.log("Requested partial name:" + req.params[0]);
-    res.render('partials/' + req.params[0]);
+    res.render('../../public/app/' + req.params[0]);
 })
 
 //using *, server index page for any request and let client do routing.
