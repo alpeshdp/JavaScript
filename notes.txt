@@ -43,7 +43,7 @@ app.get('*', function(req, res) {
 #* index.jade
 h2=MonGoMessage
 
-What's New? (Tag1)
+What's New? (Level1)
 1. Views (partials) organized in different folders on server side
 2. Added content to main page
 3. Explained recursive loop betwen Express and Angular
@@ -53,3 +53,11 @@ What's New? (Tag1)
 4. Login UI added.   
 
    
+What's New? (Level-2)
+1. Moved partials from server to client, so that angular controllers are grouped better.
+2. No need to maintain parallel directories in client and server.
+
+What's New? (Level-3)
+module.exports
+ -- Export public functions using require(path...)
+ -- It can be a function or an object.
