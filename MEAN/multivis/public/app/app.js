@@ -1,6 +1,7 @@
 var app = angular.module('MultiVisApp', [
     'ngResource',
-    'ngRoute']);
+    'ngRoute',
+    'toaster']);
 
 app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode({

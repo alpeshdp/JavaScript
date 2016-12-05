@@ -47,7 +47,7 @@ What's New? (Level1)
 1. Views (partials) organized in different folders on server side
 2. Added content to main page
 3. Explained recursive loop betwen Express and Angular
-   Check server.xml 
+   Check server.js 
    -- get for partials will not match hence * will render index.jade
    -- index.jade will request for partial .... infinite loop 
 4. Login UI added.   
@@ -61,3 +61,11 @@ What's New? (Level-3)
 module.exports
  -- Export public functions using require(path...)
  -- It can be a function or an object.
+ 
+ 
+What's New? (Level-4)
+Added server side code to authenticate user with passport-local strategy. 
+Hooked up client with server
+Refactored client code:
+-- Added service to authenticate, notify and hold user (identity)
+-- Login controller handles  just display logic.

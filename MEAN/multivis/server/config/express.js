@@ -1,7 +1,10 @@
 var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    stylus = require('stylus');
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    stylus = require('stylus')
+    passport = require('passport');
 
 module.exports = function(app, config) {
 
@@ -18,10 +21,17 @@ module.exports = function(app, config) {
     // create "middleware"
     var logger = morgan('dev');
     app.use(morgan('dev'));
+    app.use(cookieParser());
 
     //app.use(express.bodyParser());
-    app.use(bodyParser.urlencoded({ extended: false }))
-    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
+
+    //app.use(express.session({secret : 'Some super secret'}));
+    app.use(session({secret : 'Some super secret'}));
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     app.use(stylus.middleware(
         {
