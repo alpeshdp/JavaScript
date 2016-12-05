@@ -69,3 +69,8 @@ Hooked up client with server
 Refactored client code:
 -- Added service to authenticate, notify and hold user (identity)
 -- Login controller handles  just display logic.
+
+
+What's New? (Level-5) | 
+Improving routes by extracting authentication details.
+- TODO: module.exports vs exports
